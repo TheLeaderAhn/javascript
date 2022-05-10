@@ -37,7 +37,9 @@ let toPoint = {
   },
 };
 toPoint.toString(); // "(1000,  2000)"
-toPoint.toLocaleString(); // ("(1,000,2,000)");
+toPoint.toLocaleString(); // ("(1,000,2,000)"); // 천단위 구분자 가짐
 
 console.log("toPoint.toString();", toPoint.toString());
 console.log("toPoint.toLocaleString();", toPoint.toLocaleString());
+
+// valueOf() 메서드  객체를 문자열이 아닌 기본타임 보통 숫자로 변환하려할때 호출
