@@ -13,8 +13,8 @@ function require(moduleName) {
   return modules[moduleName];
 }
 
-// modules["set.js"] = function () {
-//   const exports = {};
+modules["set.js"] = function () {
+  const exports = {};
 
-//   exports.BitSet = Cl;
-// };
+  exports.BitSet = Cl;
+};
