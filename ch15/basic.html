@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./event.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Handler when the DOM is fully loaded
+        // 현재 시간을 표시할함수
+        function displayTime() {
+          let clock = document.querySelector("#clock");
+          let now = new Date();
+          clock.textContent = now.toLocaleTimeString(); // 객체에 시간을 표시한다
+        }
+        displayTime(); // 시계를 표시
+        setInterval(displayTime, 1000); // 시계를 매초 업데이트
+      });
+    </script>
+    <style>
+      #wrapper {
+        text-align: center;
+        margin-top: 20%;
+      }
+      #clock {
+        font: bold 24px sans-serif;
+        background: 15;
+        padding: 15;
+        border: solid black 2px;
+        border-radius: 10px;
+      }
+    </style>
+    <title>디지털 시계</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Digital Clock</h1>
+      <span id="clock"></span><br /><br />
+      <div>
+        <button style="font-size: 20px" onclick="console.log('Test.js')">
+          test
+        </button>
+      </div>
+      <div>
+        <br /><br />
+        <button
+          style="border-radius: 10px; color: blue; font-size: large"
+          id="mybutton"
+        >
+          Clikc Me
+        </button>
+      </div>
+    </div>
+    <form id="shipping">ggg</form>
+    <br />
+    <br />
+    <p>This is a <i>simple</i> document</p>
+  </body>
+  <script src="./event.js"></script>
+  <script src="./scriptingDocument.js"></script>
+  <script src="./geometry.js"></script>
+</html>
