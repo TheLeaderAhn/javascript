@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메신저 (chat-TEST)</title>
+  </head>
+  <body>
+    <input
+      id="input"
+      style="width: 100%; padding: 10px; border: solid black 2px"
+    />
+  </body>
+  <script>
+    let nick = prompt("별명을 입력해주세요");
+    let input = document.getElementById("input");
+    input.focus();
+
+    // EventSource를 써서 새로운 메시지 알림등록
+    let chat = new EventSource("/chat");
+    chat.addEventListener("chat", (event) => {
+      let div = document.createElement("div");
+      div.append(event.data);
+      input.before(div); // input 태그 앞에 div 추가
+      input.scrollIntoView();
+    });
+
+    // fetch() 써써 사용자 메시지 서버로 보냄
+    input.addEventListener("change", () => {
+      fetch("/chat", {
+        method: "POST",
+        body: nick + " : " + input.value,
+      }).catch((e) => console.error); // dpfj rlfhr
+      input.value = ""; // 입력 필드 초기화;
+    });
+  </script>
+</html>
